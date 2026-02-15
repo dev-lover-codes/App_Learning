@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-String getFullName(String FirstName, String lastName) {
-  return "$FirstName $lastName"; //creating function here
-}
-String conditions(){
-var age= 20 ;
-if (age==21){
-  print("age is 21")
-}else if (age == 22){
-print("Age is 22")
-}else {
-  print("Age is 20")
+String getFullName(String firstName, String lastName) {
+  return "$firstName $lastName"; //creating function here
 }
 
-
+void test() {
+  const age = 20;
+  if (age == 21) {
+    print("age is 21");
+  } else if (age == 22) {
+    print("Age is 22");
+  } else {
+    print("Age is 20");
+  }
 }
+
 void main() {
   runApp(const MyApp());
 }
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print(getFullName('John', 'Doe')); //function calling is doing here
-    conditions();
+    test();
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -120,8 +120,10 @@ class _MyHomePageState extends State<MyHomePage> {
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('You have pushed the button this many times:'),
+          children: <Widget>[
+            const Text(
+              'You have pushed the button this many times:',
+            ),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
@@ -133,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
