@@ -15,16 +15,43 @@ void test() {
   }
 }
 void listing(){
-  List<int> numbers = [1,3,5,7]; //Creation of list 
-   print("$numbers \nPrinting number at index 0: ${numbers[0]}");
-   numbers.add(2);
-   numbers.addAll([4,6]);
-   print(numbers);
-   numbers.remove(2);
-   print(numbers);
+  // 1. Declaration
+  List<int> scores = [85, 92, 78];
+  print("Initial List: $scores");
 
+  // 2. Adding single item
+  scores.add(95);
+  print("After adding 95: $scores");
 
+  // Adding multiple items
+  scores.addAll([60, 70]);
+  print("After adding [60, 70]: $scores");
+
+  // 3. Modifying item at index 0
+  scores[0] = 90;
+  print("Modifying item at index 0 is :- ${scores[0]}");
+  print("List after modification: $scores");
+
+  // 4. Searching
+  print("Does list contain 92? :- ${scores.contains(92)}");
+  print("Index of 78 is :- ${scores.indexOf(78)}");
+
+  // 5. Removing specific value
+  scores.remove(60);
+  print("After removing value 60: $scores");
+
+  // Removing by index
+  scores.removeAt(1);
+  print("After removing item at index 1: $scores");
+
+  // 6. Loop printing
+  print("\nCurrent Scores:");
+  for (var score in scores) {
+    print("Scored: $score");
+  }
 }
+
+
 
 void main() {
   runApp(const MyApp());
